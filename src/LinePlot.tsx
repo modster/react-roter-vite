@@ -1,6 +1,16 @@
 import * as d3 from "d3";
 import { useEffect, useRef } from "react";
 
+interface LinePlotProps {
+  data: number[];
+  width?: number;
+  height?: number;
+  marginTop?: number;
+  marginRight?: number;
+  marginBottom?: number;
+  marginLeft?: number;
+}
+
 export default function LinePlot({
   data,
   width = 640,
@@ -9,9 +19,9 @@ export default function LinePlot({
   marginRight = 20,
   marginBottom = 30,
   marginLeft = 40,
-}) {
-  const gx = useRef();
-  const gy = useRef();
+}: LinePlotProps) {
+  const gx = useRef<SVGGElement>(null);
+  const gy = useRef<SVGGElement>(null);
   const x = d3.scaleLinear(
     [0, data.length - 1],
     [marginLeft, width - marginRight],

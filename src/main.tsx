@@ -7,6 +7,7 @@ import AComponent from "./pages/layout/a-component.tsx";
 import { ChartComponent } from "./ChartComponent.tsx";
 import SearchParams from "./SearchParams.tsx";
 import CanvasLayout from "./Layouts/CanvasLayout.tsx";
+import Chart from "./pages/PlotBars.tsx";
 import StaticLayout from "./Layouts/StaticLayout.tsx";
 import StaticComponent from "./pages/ssg/static-component.tsx";
 import Layout from "./Layouts/Layout.tsx";
@@ -21,13 +22,12 @@ export interface RouteList {
 export const routeList: RouteList[] = [
   { path: "/", name: "Home" },
   { path: "r3fiber", name: "R3Fiber" },
+  { path: "PlotBars", name: "Bars" },
   {
     path: "chart/s/:symbolId/i/:intervalId/e/:exchangeId",
     name: "ChartComponent",
   },
   { path: "SearchParams", name: "Search" },
-  { path: "a-component", name: "A Component" },
-  { path: "new-route", name: "New Route" },
   { path: "box", name: "Box" },
   { path: "static", name: "Static" },
 ];
@@ -45,6 +45,7 @@ ReactDOM.createRoot(root).render(
         <Route path="r3fiber" element={<R3Fiber />} />
         <Route path="a-component" element={<AComponent />} />
         <Route path="SearchParams" element={<SearchParams />} />
+        <Route path="PlotBars" element={<Chart />} />
         <Route
           path="chart/s/:symbolId/i/:intervalId/e/:exchangeId"
           element={<ChartComponent />}
@@ -53,6 +54,7 @@ ReactDOM.createRoot(root).render(
       <Route element={<CanvasLayout />}>
         <Route path="/new-route" element={<NewRoute />} />
         <Route path="/box" element={<Box />} />
+        <Route path="/chart" element={<Chart />} />
       </Route>
       <Route element={<StaticLayout />}>
         <Route path="/static" element={<StaticComponent />} />
