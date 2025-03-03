@@ -12,7 +12,6 @@ import StaticComponent from "./pages/ssg/static-component.tsx";
 import Layout from "./Layouts/Layout.tsx";
 import NewRoute from "./pages/canvas/new-route.tsx"; // Added new route example
 import "./styles.css";
-
 export interface RouteList {
   layout?: string;
   path: string;

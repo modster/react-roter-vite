@@ -1,9 +1,9 @@
+@import "tailwindcss";
+
 * {
   color: aliceblue;
-
   margin: 0;
   padding: 0;
-  font-size: small;
 }
 
 menu {
@@ -29,13 +29,3 @@ a.pending {
 a.transitioning {
   /* css transition is running */
 /* } */
-
-.inside {
-  list-style-position: inside;
-  list-style-type: square;
-}
-
-.outside {
-  list-style-position: outside;
-  list-style-type: square;
-}
