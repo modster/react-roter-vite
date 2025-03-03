@@ -6,14 +6,21 @@
     "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/"
   },
   "compilerOptions": {
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "deno.ns",
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "jsxImportSourceTypes": "@types/react"
   },
   "imports": {
+    "+types/*": "./src/types/*",
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.4",
     "@observablehq/plot": "npm:@observablehq/plot@^0.6.17",
+    "@react-router/dev": "npm:@react-router/dev@^7.2.0",
     "@react-three/fiber": "npm:@react-three/fiber@^9.0.4",
     "@tailwindcss/postcss": "npm:@tailwindcss/postcss@^4.0.9",
     "@types/react": "npm:@types/react@^19.0.10",

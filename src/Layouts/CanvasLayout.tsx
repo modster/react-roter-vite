@@ -1,8 +1,11 @@
 import { Outlet } from "react-router";
 import { Canvas } from "@react-three/fiber";
+import AppNav from "../pages/NavLink.tsx";
+
 export const Layout = () => {
   return (
     <div className="size-full">
+      <AppNav /> {/* Add the navigation component here */}
       <Canvas>
         <ambientLight intensity={Math.PI / 2} />
         <spotLight

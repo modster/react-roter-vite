@@ -1,4 +1,41 @@
 * {
+  color: aliceblue;
+
   margin: 0;
   padding: 0;
+  font-size: small;
+}
+
+menu {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+menu ::marker {
+  list-style: none;
+}
+
+
+a.active {
+  color: red;
+}
+
+/* 
+a.pending {
+  animate: pulse 1s infinite;
+}
+
+a.transitioning {
+  /* css transition is running */
+/* } */
+
+.inside {
+  list-style-position: inside;
+  list-style-type: square;
+}
+
+.outside {
+  list-style-position: outside;
+  list-style-type: square;
 }
