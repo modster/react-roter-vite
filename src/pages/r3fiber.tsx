@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { useRef, useState } from "react";
 import { Canvas, ThreeElements, useFrame } from "@react-three/fiber";
-import "../../styles.css";
+import "../styles.css";
 
 export function Box(props: ThreeElements["mesh"]) {
   const meshRef = useRef<THREE.Mesh>(null!);

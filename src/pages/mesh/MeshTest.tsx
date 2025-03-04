@@ -1,4 +1,4 @@
-const NewRoute = () => {
+const MeshTest = () => {
   return (
     <>
       <mesh>
@@ -9,4 +9,4 @@ const NewRoute = () => {
   );
 };
 
-export default NewRoute;
+export default MeshTest;

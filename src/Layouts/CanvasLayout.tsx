@@ -2,9 +2,9 @@ import { Outlet } from "react-router";
 import { Canvas } from "@react-three/fiber";
 import AppNav from "../pages/NavLink.tsx";
 
-export const Layout = () => {
+export const MeshLayout = () => {
   return (
-    <div className="size-full">
+    <div className="size-full text-grey-300 stroke-slate-300 stroke-1">
       <AppNav /> {/* Add the navigation component here */}
       <Canvas>
         <ambientLight intensity={Math.PI / 2} />

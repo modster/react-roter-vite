@@ -3,29 +3,25 @@ import routeList from "../main.tsx";
 
 function AppNav() {
   return (
-    <div className="flex flex-row bg-slate-700 justify-between">
-      <menu className="flex flex-row justify-between gap-1">
+    <div className="bg-slate-700">
+      <menu className="m-auto flex flex-row">
         {routeList.map((route, i) => (
-          <li key={i}>
+          <li className="m-auto text-slate" key={i}>
             <NavLink
               to={route.path}
               end
               className={({ isActive }) =>
                 isActive ? "text-bold text-white" : "text-slate-400"}
             >
-              {route.name} &nbsp;
+              {route.name}
             </NavLink>
           </li>
         ))}
-      </menu>
-      <menu className="flex flex-row justify-between gap-1 p-1">
-        <li className="justify-end">
+        <li>
           <input
             type="text"
-            placeholder=" Search"
-            className="bg-slate-600 text-slate-300 m-px rounded gap-1"
-            aria-label="Search"
-            onChange={(e) => console.log(e.target.value)}
+            placeholder="Search"
+            className="bg-slate-700 text-white p-2 align-right rounded gap-1"
           />
         </li>
       </menu>
