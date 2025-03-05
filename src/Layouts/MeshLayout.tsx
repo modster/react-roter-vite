@@ -4,7 +4,7 @@ import AppNav from "../pages/NavLink.tsx";
 
 export const MeshLayout = () => {
   return (
-    <div className="size-full text-grey-300 stroke-slate-300 stroke-1">
+    <div className="size-full text-slate-400 stroke-slate-400 stroke-1">
       <AppNav /> {/* Add the navigation component here */}
       <Canvas>
         <ambientLight intensity={Math.PI / 2} />
@@ -25,4 +25,4 @@ export const MeshLayout = () => {
     </div>
   );
 };
-export default Layout;
+export default MeshLayout;

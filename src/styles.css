@@ -1,14 +1,11 @@
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.menu {
+menu {
   display: flex;
-  align-items: left;
-  column-gap: 1rem;
+  align-items: center;
+  justify-items: middle;
+  column-gap: 0.2rem;
+
 }
 
 menu ::marker {

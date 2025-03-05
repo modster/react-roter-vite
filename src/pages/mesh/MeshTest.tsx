@@ -1,10 +1,12 @@
+import { CameraControls } from "@react-three/drei";
 const MeshTest = () => {
   return (
     <>
-      <mesh>
+      <mesh rotation={[0.25, 0.25, 0.25]}>
         <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color="hotpink" />
+        <meshPhongMaterial color="slategrey" />
       </mesh>
+      <CameraControls camera={{ enablePan: false }} />
     </>
   );
 };
