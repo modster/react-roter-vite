@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 
 export const App = () => (
-  <div className="size-full">
+  <div>
     <Canvas>
       <ambientLight intensity={Math.PI / 2} />
       <spotLight

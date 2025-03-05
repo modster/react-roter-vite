@@ -1,5 +1,5 @@
 // import type { LoaderFunctionArgs } from "react-router-dom";
-import { ChartProps } from "./layout/+types/chart.ts";
+import { ChartProps } from "./+types/chart.ts";
 import { useParams } from "react-router";
 import { JSX } from "react/jsx-runtime";
 

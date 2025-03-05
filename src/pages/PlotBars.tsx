@@ -1,7 +1,9 @@
 import * as Plot from "@observablehq/plot";
 import { useEffect, useRef } from "react";
+import { Svg } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
-const data = [
+const letters = [
   { letter: "A", frequency: 0.1 },
   { letter: "B", frequency: 0.2 },
   { letter: "C", frequency: 0.3 },
@@ -34,7 +36,7 @@ const plotChart = Plot.plot({
   title: "Letter Frequency",
   y: { percent: true },
   marks: [
-    Plot.barY(data, {
+    Plot.barY(letters, {
       x: "letter",
       y: "frequency",
       fill: "steelblue",
@@ -43,15 +45,22 @@ const plotChart = Plot.plot({
     Plot.ruleY([0]),
   ],
 });
-export default function Chart() {
+export default function PlotBars() {
+  /**
+   * Create a reference to the div element
+   * where the chart will be rendered
+   */
   const chartRef = useRef<HTMLDivElement>(null);
+  const chartElement = plotChart;
 
   useEffect(() => {
     if (chartRef.current) {
+      // chartRef.current.style.width
+      // chartRef.current.style.height
       chartRef.current.innerHTML = "";
-      chartRef.current.appendChild(plotChart);
+      chartRef.current.appendChild(chartElement);
     }
   }, []);
 
-  return <div ref={chartRef}></div>;
+  return <div className="flex mx-auto" ref={chartRef}></div>;
 }

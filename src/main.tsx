@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Box } from "./pages/r3fiber.tsx";
+import { Box } from "./pages/layout/r3fiber.tsx";
 import { App } from "./pages/layout/app.tsx";
-import R3Fiber from "./pages/r3fiber.tsx";
+import R3Fiber from "./pages/layout/r3fiber.tsx";
 // import AComponent from "./pages/layout/a-component.tsx";
 // import { ChartComponent } from "./ChartComponent.tsx";
 // import LinearColorPlot from "./pages/LinearColorPlot.tsx";
@@ -10,12 +10,12 @@ import R3Fiber from "./pages/r3fiber.tsx";
 import PlotOhlcvCandles from "./pages/PlotOhlcvCandles.tsx";
 import MeshLayout from "./Layouts/MeshLayout.tsx";
 import MeshTest from "./pages/mesh/MeshTest.tsx";
-import Chart from "./pages/PlotBars.tsx";
+import PlotBars from "./pages/PlotBars.tsx";
+import Chart from "./pages/Chart.tsx";
 import StaticLayout from "./Layouts/StaticLayout.tsx";
 import StaticComponent from "./pages/ssg/static-component.tsx";
 import Layout from "./Layouts/Layout.tsx";
 import NewRoute from "./pages/mesh/MeshTest.tsx"; // Added new route example
-import "./styles.css";
 export interface RouteList {
   layout?: string;
   path: string;
@@ -29,7 +29,8 @@ export const routeList: RouteList[] = [
   { path: "PlotOhlcvCandles", name: "Ohlcv" },
   { path: "box", name: "Box" },
   { path: "static", name: "Static" },
-  { path: "MeshTest", name: "MeshTest" },
+  { path: "MeshTest", name: "Mesh" },
+  { path: "chart", name: "Chart" },
 ];
 
 const root = document.getElementById("root");
@@ -44,7 +45,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/" element={<App />} />
         <Route path="r3fiber" element={<R3Fiber />} />
         <Route path="PlotOhlcvCandles" element={<PlotOhlcvCandles />} />
-        <Route path="PlotBars" element={<Chart />} />
+        <Route path="PlotBars" element={<PlotBars />} />
       </Route>
       <Route element={<MeshLayout />}>
         <Route path="MeshTest" element={<MeshTest />} />
@@ -55,6 +56,11 @@ ReactDOM.createRoot(root).render(
       <Route element={<StaticLayout />}>
         <Route path="/static" element={<StaticComponent />} />
       </Route>
+      <Route element={<Layout />}>
+        <Route path="/chart" element={<Chart />} />
+        <Route path="/chart/:symbol/:interval/:exchange" element={<Chart />} />
+      </Route>
+      <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>
   </BrowserRouter>,
 );

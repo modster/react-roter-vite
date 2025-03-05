@@ -5,7 +5,7 @@
 import * as d3 from "d3";
 import { useState } from "react";
 import "./styles.css";
-import LinePlot from "./pages/LinePlot.tsx";
+import LinePlot from "./pages/layout/LinePlot.tsx";
 // HydrateFallback is rendered while the client loader is running
 export function HydrateFallback() {
   return <div>Loading...</div>;
