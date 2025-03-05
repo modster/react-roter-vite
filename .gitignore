@@ -1,9 +1,8 @@
 # react-router-vite 
 .react-router/
 node_modules/
-notes.md
-notes.*.md
-
+*.notes.md
+*.notes.*
 # Logs
 logs
 *.log

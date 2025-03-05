@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import { Canvas } from "@react-three/fiber";
-import AppNav from "../pages/NavLink.tsx";
+import AppNav from "../components/NavLink.tsx";
 
 export const MeshLayout = () => {
   return (
